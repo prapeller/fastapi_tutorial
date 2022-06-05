@@ -1,5 +1,6 @@
 import uvicorn
 from fastapi import FastAPI, Depends
+from fastapi.staticfiles import StaticFiles
 
 from database.database import Base
 from database.database import engine
@@ -8,7 +9,6 @@ from routers.admin import router as admin_router
 from routers.index import router as index_router
 from routers.items import router as items_router
 from routers.users import router as users_router
-from fastapi.staticfiles import StaticFiles
 
 Base.metadata.create_all(bind=engine)
 
